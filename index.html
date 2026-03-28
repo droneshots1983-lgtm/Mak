@@ -2,33 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kip&Kin · Book Direct</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Kip&Kin · Book Direct · Arugam Bay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --sand: #f5efe0; --earth: #b85c38; --dark: #1a1710; --accent: #25d366; }
-        body { background-color: var(--dark); color: var(--sand); font-family: 'Jost', sans-serif; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; }
-        .card { background: #221e14; padding: 40px; border-radius: 24px; border: 1px solid rgba(184, 92, 56, 0.3); max-width: 450px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 10px; }
-        h1 em { color: var(--earth); font-style: italic; }
-        p { color: #8a7e68; line-height: 1.6; margin-bottom: 30px; font-weight: 300; }
-        .btn { background: var(--accent); color: #060f09; padding: 20px 35px; border-radius: 100px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
-        .btn:active { transform: scale(0.96); }
-        .chips { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 25px; }
-        .chip { font-size: 0.65rem; background: rgba(184, 92, 56, 0.1); border: 1px solid rgba(184, 92, 56, 0.2); padding: 5px 12px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; }
+        :root { 
+            --sand: #f5efe0; --earth: #b85c38; --dark: #1a1710; 
+            --accent: #25d366; --gold: #c49a1a; --txt-d: #8a7e68; 
+            --bamboo: #4a5a24; --tunis: #b85c38; --lilly: #f1e6d8; 
+        }
+        body { background-color: var(--dark); color: var(--sand); font-family: 'Jost', sans-serif; margin: 0; line-height: 1.6; }
+        
+        /* Hero & Sections */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; background: linear-gradient(to bottom, #1a1710, #221e14); }
+        .hero-name { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; margin: 10px 0; font-weight: 700; }
+        .hero-name em { color: var(--earth); font-style: italic; }
+        .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
+        .sec { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+        .why-card { background: #221e14; padding: 30px; border-radius: 16px; border: 1px solid rgba(184, 92, 56, 0.1); }
+        
+        /* Room Styling */
+        .room-card { background: #221e14; border-radius: 20px; overflow: hidden; margin-bottom: 20px; text-align: left; border: 1px solid rgba(184, 92, 56, 0.15); }
+        .room-color-bar { height: 6px; width: 100%; }
+        .mixed { background: var(--earth); } .female { background: #d4a9a0; } .large { background: var(--gold); }
+        .room-content { padding: 25px; }
+        .chip { display: inline-block; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; margin: 4px 2px; background: rgba(184, 92, 56, 0.1); border: 1px solid rgba(184, 92, 56, 0.2); }
+        
+        /* Booking Form */
+        .booking-inner { max-width: 500px; margin: 0 auto; background: #221e14; padding: 40px; border-radius: 30px; border: 1px solid var(--earth); }
+        input, select, textarea { width: 100%; background: #1a1710; border: 1px solid rgba(184, 92, 56, 0.3); padding: 12px; border-radius: 8px; color: var(--sand); margin-bottom: 15px; box-sizing: border-box; }
+        .submit-btn { width: 100%; background: var(--accent); color: #000; border: none; padding: 18px; border-radius: 50px; font-weight: 700; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div style="font-size: 0.7rem; letter-spacing: 3px; color: var(--earth); margin-bottom: 15px;">ARUGAM BAY</div>
-        <h1>Skip the fees. <br><em>Book Direct.</em></h1>
-        <p>A calm, well-run base for surfers and solo travellers. Message us on WhatsApp for the best guaranteed rates and instant confirmation.</p>
-        <a href="https://wa.me/94769872222?text=Hi%20Kip%20%26%20Kin!%20I'd%20like%20to%20book%20a%20stay." class="btn">Book via WhatsApp</a>
-        <div class="chips">
-            <span class="chip">Pod Dorms</span>
-            <span class="chip">Free Breakfast</span>
-            <span class="chip">Starlink Wi-Fi</span>
+    <section class="hero">
+        <div class="hero-name">Kip<em>&</em>Kin</div>
+        <div class="hero-tagline">Bunk. Bond.</div>
+        <div class="hero-copy">A calm, well-run base for surfers, solo travellers and small groups.</div>
+    </section>
+
+    <div class="sec">
+        <div class="why-grid">
+            [span_4](start_span)<div class="why-card">💰<br><strong>Zero Booking Fees</strong><br>No OTA commission[span_4](end_span).</div>
+            [span_5](start_span)<div class="why-card">⚡<br><strong>Instant Confirm</strong><br>WhatsApp reply within minutes[span_5](end_span).</div>
         </div>
     </div>
+
+    <section class="sec">
+        <div class="booking-inner">
+            <h3 style="font-family:'Cormorant Garamond',serif; font-size: 2rem;">Send a Booking Request</h3>
+            <input type="text" id="guestName" placeholder="Your Name">
+            <select id="roomType">
+                <option value="Thal - Mixed 4 Bed">Thal · Mixed · 4 Beds (Ground)</option>
+                <option value="Sippi - Female 4 Bed">Sippi · Female · 4 Beds (Ground)</option>
+                <option value="Rala - Mixed 8 Bed">Rala · Mixed · 8 Beds (Upper)</option>
+            </select>
+            <button class="submit-btn" onclick="sendWA()">Send Booking via WhatsApp</button>
+        </div>
+    </section>
+
+    <div class="sec">
+        <div class="room-card">
+            <div class="room-color-bar mixed"></div>
+            <div class="room-content">
+                [span_6](start_span)[span_7](start_span)<div style="font-weight:bold; font-size:1.4rem;">Thal[span_6](end_span)[span_7](end_span)</div>
+                [span_8](start_span)<div style="color:var(--txt-d); font-size:0.8rem;">MIXED POD DORM[span_8](end_span)</div>
+                [span_9](start_span)<div class="chip">24/7 AC[span_9](end_span)[span_10](start_span)</div><div class="chip">Pod Style[span_10](end_span)</div>
+            </div>
+        </div>
+        </div>
+
+    <script>
+        function sendWA() {
+            const name = document.getElementById('guestName').value;
+            const room = document.getElementById('roomType').value;
+            const text = encodeURIComponent(`Hi Kip & Kin! I'm ${name}. I'd like to book: ${room}`);
+            window.location.href = `https://wa.me/94769872222?text=${text}`;
+        }
+    </script>
 </body>
 </html>
